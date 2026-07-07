@@ -1,0 +1,117 @@
+[package]
+name = "git-listener"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# Discord
+serenity = { version = "0.12", default-features = false, features = [
+    "cache",
+    "gateway",
+    "rustls_backend",
+    "chrono",
+] }
+poise = "0.6"
+
+# HTTP
+axum = { version = "0.8", features = ["macros"] }
+tower = "0.5"
+tower-http = { version = "0.6", features = [
+    "cors",
+    "trace",
+    "limit",
+    "timeout",
+    "set-header",
+] }
+
+# Database
+sqlx = { version = "0.8", features = [
+    "runtime-tokio",
+    "tls-rustls",
+    "postgres",
+    "uuid",
+    "chrono",
+    "migrate",
+] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# HTTP client
+reqwest = { version = "0.12", default-features = false, features = [
+    "json",
+    "rustls-tls",
+    "http2",
+] }
+
+# Structured logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+tracing-appender = "0.2"
+
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# Configuration
+config = "0.15"
+clap = { version = "4", features = ["derive", "env"] }
+
+# Date/time
+chrono = { version = "0.4", features = ["serde"] }
+
+# Concurrent data structures
+dashmap = "6"
+
+# Crypto
+hmac = "0.12"
+sha2 = "0.10"
+sha1 = "0.10"
+hex = "0.4"
+
+# UUID
+uuid = { version = "1", features = ["v4", "serde"] }
+
+# Template engine
+handlebars = "6"
+
+# Rate limiting
+governor = "0.7"
+
+# Validation
+validator = { version = "0.19", features = ["derive"] }
+
+# URL parsing
+url = "2"
+
+# Metrics
+metrics = "0.24"
+metrics-exporter-prometheus = "0.16"
+
+# Bytes
+bytes = "1"
+
+# Regex (for filter glob matching)
+regex = "1"
+
+# Random token generation
+rand = "0.8"
+
+# Async trait support
+async-trait = "0.1"
+
+# HTTP body utilities (for middleware body extraction)
+http-body-util = "0.1"
+
+# Digest traits (for HMAC verification)
+digest = "0.10"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
+strip = true

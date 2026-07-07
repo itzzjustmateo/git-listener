@@ -1,0 +1,15 @@
+pub mod branch;
+pub mod deployment;
+pub mod discussion;
+pub mod fork;
+pub mod generic;
+pub mod issue;
+pub mod issue_comment;
+pub mod package_event;
+pub mod pull_request;
+pub mod push;
+pub mod release;
+pub mod repository;
+pub mod star;
+pub mod wiki;
+pub mod workflow;

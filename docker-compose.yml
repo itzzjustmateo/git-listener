@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: git_listener
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  git-listener:
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    environment:
+      GL_DATABASE__URL: postgres://postgres:postgres@postgres:5432/git_listener
+      GL_DISCORD__TOKEN: "${GL_DISCORD_TOKEN}"
+      GL_DISCORD__APPLICATION_ID: "${GL_DISCORD_APPLICATION_ID}"
+      GL_APP__ENVIRONMENT: production
+      GL_LOGGING__FORMAT: json
+    volumes:
+      - ./config:/app/config:ro
+
+volumes:
+  pgdata:

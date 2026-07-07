@@ -1,0 +1,10 @@
+pub const PUSH: &str = "Push Hook";
+pub const TAG_PUSH: &str = "Tag Push Hook";
+pub const ISSUES: &str = "Issues Hook";
+pub const NOTE: &str = "Note Hook";
+pub const MERGE_REQUEST: &str = "Merge Request Hook";
+pub const JOB: &str = "Job Hook";
+pub const PIPELINE: &str = "Pipeline Hook";
+pub const WIKI: &str = "Wiki Page Hook";
+pub const RELEASE: &str = "Release Hook";
+pub const DEPLOYMENT: &str = "Deployment Hook";

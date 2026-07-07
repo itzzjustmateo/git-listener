@@ -1,0 +1,34 @@
+[app]
+name = "git-listener"
+version = "0.1.0"
+environment = "development"
+
+[database]
+url = "postgres://postgres:postgres@localhost:5432/git_listener"
+max_connections = 20
+min_connections = 5
+connect_timeout_seconds = 10
+idle_timeout_seconds = 300
+run_migrations = true
+
+[discord]
+token = ""
+application_id = 0
+intents = 513
+
+[webhook]
+bind_address = "0.0.0.0"
+bind_port = 8080
+max_body_size = 5242880
+rate_limit_burst = 30
+rate_limit_period_seconds = 60
+
+[api]
+enabled = false
+bind_address = "127.0.0.1"
+bind_port = 8081
+api_keys = []
+
+[logging]
+level = "info"
+format = "text"

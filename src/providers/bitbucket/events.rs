@@ -1,0 +1,11 @@
+pub const PUSH: &str = "repo:push";
+pub const PULL_REQUEST_CREATED: &str = "pullrequest:created";
+pub const PULL_REQUEST_UPDATED: &str = "pullrequest:updated";
+pub const PULL_REQUEST_APPROVED: &str = "pullrequest:approved";
+pub const PULL_REQUEST_MERGED: &str = "pullrequest:fulfilled";
+pub const PULL_REQUEST_DECLINED: &str = "pullrequest:rejected";
+pub const ISSUE_CREATED: &str = "issue:created";
+pub const ISSUE_UPDATED: &str = "issue:updated";
+pub const ISSUE_COMMENT_CREATED: &str = "issue:comment_created";
+pub const FORK: &str = "repo:fork";
+pub const COMMIT_COMMENT_CREATED: &str = "commit_comment_created";

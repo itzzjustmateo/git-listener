@@ -1,0 +1,11 @@
+pub const PUSH: &str = "push";
+pub const PULL_REQUEST: &str = "pull_request";
+pub const ISSUES: &str = "issues";
+pub const ISSUE_COMMENT: &str = "issue_comment";
+pub const RELEASE: &str = "release";
+pub const CREATE: &str = "create";
+pub const DELETE: &str = "delete";
+pub const FORK: &str = "fork";
+pub const WATCH: &str = "watch";
+pub const STAR: &str = "star";
+pub const WIKI: &str = "wiki";
