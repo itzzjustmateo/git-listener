@@ -12,7 +12,7 @@ impl Default for EventDispatcher {
 
 impl EventDispatcher {
     pub fn new() -> Self {
-        Self::default()
+        Self
     }
 
     pub async fn dispatch(
