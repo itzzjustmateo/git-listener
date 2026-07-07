@@ -4,6 +4,12 @@ use crate::providers::types::RenderData;
 
 pub struct EventDispatcher;
 
+impl Default for EventDispatcher {
+    fn default() -> Self {
+        Self
+    }
+}
+
 impl EventDispatcher {
     pub fn new() -> Self {
         Self

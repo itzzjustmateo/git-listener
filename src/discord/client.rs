@@ -83,10 +83,10 @@ async fn handle_event(_ctx: &serenity::Context, event: &poise::serenity_prelude:
         poise::serenity_prelude::FullEvent::Ready { data_about_bot, .. } => {
             tracing::info!("logged in as {}", data_about_bot.user.name);
         }
-        poise::serenity_prelude::FullEvent::GuildCreate { guild, is_new } => {
-            if is_new.unwrap_or(false) {
-                tracing::info!("joined guild: {} ({})", guild.name, guild.id);
-            }
+        poise::serenity_prelude::FullEvent::GuildCreate { guild, is_new }
+            if is_new.unwrap_or(false) =>
+        {
+            tracing::info!("joined guild: {} ({})", guild.name, guild.id);
         }
         _ => {}
     }
