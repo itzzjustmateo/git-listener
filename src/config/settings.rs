@@ -91,7 +91,7 @@ impl Settings {
             builder = builder.set_override("discord.token", token)?;
         }
         if let Some(app_id) = cli.application_id {
-            builder = builder.set_override("discord.application_id", app_id as u64)?;
+            builder = builder.set_override("discord.application_id", app_id)?;
         }
         if let Some(port) = cli.webhook_port {
             builder = builder.set_override("webhook.bind_port", port)?;

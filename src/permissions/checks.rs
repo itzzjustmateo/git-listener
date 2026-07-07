@@ -28,10 +28,10 @@ pub async fn member_permission_level(
 ) -> PermissionLevel {
     let guild = guild_id.to_partial_guild(ctx).await.ok();
 
-    if let Some(ref guild) = guild {
-        if member.user.id == guild.owner_id {
-            return PermissionLevel::Owner;
-        }
+    if let Some(ref guild) = guild
+        && member.user.id == guild.owner_id
+    {
+        return PermissionLevel::Owner;
     }
 
     #[allow(deprecated)]
